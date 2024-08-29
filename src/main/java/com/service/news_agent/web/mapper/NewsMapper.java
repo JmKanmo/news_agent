@@ -1,0 +1,7 @@
+package com.service.news_agent.web.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface NewsMapper {
+}
