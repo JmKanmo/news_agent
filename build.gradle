@@ -22,6 +22,12 @@ configurations {
 
 repositories {
     mavenCentral()
+    // 아래 maven 블록 내 S3 내에 업로드 된 공통 프로젝트의 url, name을 추가로 기입
+    maven {
+        // library repository root URL 정보 등록, upload repository 정보
+        url "https://${project.findProperty('AWS_S3_BUCKET_NAME')}.s3.amazonaws.com/maven/"
+        name "${project.findProperty('AWS_S3_BUCKET_NAME')}"
+    }
 }
 
 ext {
@@ -44,6 +50,9 @@ dependencies {
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // 공통 라이브러리 (S3 내 패키지 경로에 맞춰서 기입)
+    implementation 'com.service:news_common:latest.release'
 }
 
 tasks.named('test') {
