@@ -79,19 +79,19 @@ mybatis:
 ##### util config #####
 util-config:
   scheduling:
-    # 스케줄링 크론잡
-    3_hours: # 3시간 마다 실행
+    # scheduling period
+    3_hours: # per 3 hours
       batch_scheduled_news_cron_job: "0 0 0/3 * * ?"
 
-    6_hours: # 6시간 마다 실행
+    6_hours: # per 6 hours
       batch_scheduled_news_cron_job: "0 0 0/6 * * ?"
 
-  # 오래된 뉴스 데이터 삭제 주기 (해당 시간 동안 남아 있는 데이터 삭제)
+  # old new data clean period (per 1 year)
   batch_config:
-    old_news_clean_period: 31557600 # 1년
+    old_news_clean_period: 31557600
 
-  # News API 설정
+  # News API config
   news_api:
-    api_url: ${LOCAL_NEWS_API_URL}
-    api_key: ${LOCAL_NEWS_API_KEY}
-    api_host: ${LOCAL_NEWS_API_HOST}
+    api_url: ${NEWS_API_URL}
+    api_key: ${NEWS_API_KEY}
+    api_host: ${NEWS_API_HOST}
