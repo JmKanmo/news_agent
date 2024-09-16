@@ -2,7 +2,9 @@ server:
   port: ${SERVER_PORT}
 
 spring:
-  profiles:
+  config:
+    activate:
+      on-profile: local
     include: env
 
   datasource:
@@ -67,14 +69,6 @@ logging:
       connection: off
     log4jdbc:
       log4j2: info
-
-
-mybatis:
-  mapper-locations: mybatis/**/*.xml
-  configuration:
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
-
 
 ##### util config #####
 util-config:
