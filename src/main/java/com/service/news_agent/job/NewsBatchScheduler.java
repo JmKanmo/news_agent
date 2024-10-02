@@ -46,5 +46,9 @@ public class NewsBatchScheduler {
         }
     }
 
-    // TODO 필요시에 추가
+    // 10초마다 실행되는 스케줄러 (테스트)
+    @Scheduled(cron = "*/10 * * * * *")
+    public void test() {
+        System.out.println("hello world");
+    }
 }
