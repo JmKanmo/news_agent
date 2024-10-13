@@ -80,11 +80,32 @@ mybatis:
 util-config:
   scheduling:
     # scheduling period
+    1_hours: # per 1 hours
+      batch_scheduled_news_cron_job: "0 0 0/1 * * ?"
+
     3_hours: # per 3 hours
       batch_scheduled_news_cron_job: "0 0 0/3 * * ?"
 
     6_hours: # per 6 hours
       batch_scheduled_news_cron_job: "0 0 0/6 * * ?"
+
+    9_hours: # per 9 hours
+      batch_scheduled_news_cron_job: "0 0 0/9 * * ?"
+
+    12_hours: # per 12 hours
+      batch_scheduled_news_cron_job: "0 0 0/12 * * ?"
+
+    15_hours: # per 15 hours
+      batch_scheduled_news_cron_job: "0 0 0/15 * * ?"
+
+    18_hours: # per 18 hours
+      batch_scheduled_news_cron_job: "0 0 0/18 * * ?"
+
+    21_hours: # per 21 hours
+      batch_scheduled_news_cron_job: "0 0 0/21 * * ?"
+
+    24_hours: # per 24 hours
+      batch_scheduled_news_cron_job: "0 0 0/24 * * ?"
 
   # old new data clean period (per 1 year)
   batch_config:
@@ -96,3 +117,8 @@ util-config:
     api_key: ${NEWS_API_KEY}
     api_host: ${NEWS_API_HOST}
 
+  # HTTP config
+  http_config:
+    connect_time_out: 300 # 5분
+    read_time_out: 300 # 5분
+    write_time_out: 300 # 5분

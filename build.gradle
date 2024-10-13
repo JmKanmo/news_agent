@@ -37,6 +37,10 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.0'
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.17.2'
     compileOnly 'org.projectlombok:lombok'
@@ -52,7 +56,7 @@ dependencies {
      * 기존의 아래 방식은 최신 버전 갱신이 늦으므로, 최신 버전 기입 후에 dependencies task 수행 후에, 로그/External Libraries 확인
      * implementation 'com.service:news_common:latest.release'
      * **/
-    implementation 'com.service:news_common:1.4'
+    implementation 'com.service:news_common:1.6'
 }
 
 tasks.named('test') {
