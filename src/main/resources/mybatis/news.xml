@@ -13,7 +13,7 @@
         <result column="LINK" jdbcType="VARCHAR" property="link"/>
         <result column="AUTHOR" jdbcType="VARCHAR" property="author"/>
         <result column="THUNMBNAIL_URL" jdbcType="VARCHAR" property="thumbnailUrl"/>
-        <result column="SOURCE" jdbcType="VARCHAR" property="source"/>
+        <result column="SOURCE" jdbcType="VARCHAR" property="source.name"/>
     </resultMap>
 
     <insert id="insertNewsList" parameterType="java.util.List">
@@ -21,6 +21,7 @@
         (COUNTRY_CODE,
         CATEGORY,
         PUBLISH_TIME,
+        PUBLISH_MONTH,
         TITLE,
         DESCRIPTION,
         LINK,
@@ -40,6 +41,7 @@
 
             <if test="item.publishTime != null">
                 #{item.publishTime, jdbcType=TIMESTAMP},
+                (YEAR(#{item.publishTime, jdbcType=TIMESTAMP}) * 100 + MONTH(#{item.publishTime, jdbcType=TIMESTAMP})),
             </if>
 
             <if test="item.title != null">
@@ -52,8 +54,10 @@
 
             #{item.link, jdbcType=VARCHAR},
             #{item.author, jdbcType=VARCHAR},
-            #{item.thumbnailUrl, jdbcType=VARCHAR},
-            #{item.source, jdbcType=VARCHAR}
+            #{item.thumbnailUrl, jdbcType=VARCHAR}
+            <if test="item.source != null and item.source.name != null">
+                ,#{item.source.name, jdbcType=VARCHAR}
+            </if>
             )
         </foreach>
     </insert>

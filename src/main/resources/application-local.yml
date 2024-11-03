@@ -83,31 +83,31 @@ util-config:
   scheduling:
     # scheduling period
     1_hours: # per 1 hours
-      batch_scheduled_news_cron_job: "0 0 0/1 * * ?"
+      batch_scheduled_news_cron_job: "3600000"
 
     3_hours: # per 3 hours
-      batch_scheduled_news_cron_job: "0 0 0/3 * * ?"
+      batch_scheduled_news_cron_job: "10800000"
 
     6_hours: # per 6 hours
-      batch_scheduled_news_cron_job: "0 0 0/6 * * ?"
+      batch_scheduled_news_cron_job: "21600000"
 
     9_hours: # per 9 hours
-      batch_scheduled_news_cron_job: "0 0 0/9 * * ?"
+      batch_scheduled_news_cron_job: "32400000"
 
     12_hours: # per 12 hours
-      batch_scheduled_news_cron_job: "0 0 0/12 * * ?"
+      batch_scheduled_news_cron_job: "43200000"
 
     15_hours: # per 15 hours
-      batch_scheduled_news_cron_job: "0 0 0/15 * * ?"
+      batch_scheduled_news_cron_job: "54000000"
 
     18_hours: # per 18 hours
-      batch_scheduled_news_cron_job: "0 0 0/18 * * ?"
+      batch_scheduled_news_cron_job: "64800000"
 
     21_hours: # per 21 hours
-      batch_scheduled_news_cron_job: "0 0 0/21 * * ?"
+      batch_scheduled_news_cron_job: "75600000"
 
     24_hours: # per 24 hours
-      batch_scheduled_news_cron_job: "0 0 0/24 * * ?"
+      batch_scheduled_news_cron_job: "86400000"
 
   # old new data clean period (per 1 year)
   batch_config:
